@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*****************************************************************************************************
+Class: MainMenu
+Description: The start point for the application, user chooses to login or register a account
+Status: complete
+******************************************************************************************************/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace sql_and_interactive_window
+namespace DnD
 {
     public partial class MainMenu : Form
     {

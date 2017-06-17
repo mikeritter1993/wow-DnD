@@ -1,4 +1,4 @@
-﻿namespace sql_and_interactive_window
+﻿namespace DnD
 {
     partial class LoginPage
     {

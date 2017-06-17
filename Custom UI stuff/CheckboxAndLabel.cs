@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*******************************************************************************************************************************
+Class: CheckboxAndLabel
+Description: Custom UserControl for windows forms porjects, uses the pre exsisting windows form tools "check box" and 2 "Labels"
+             main functionality if check box is checked add profMod to label 1.
+Status: not complete
+TO DO: add roll function call to nameLbl clicking
+*******************************************************************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -8,19 +15,64 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace sql_and_interactive_window
+namespace DnD
 {
     public partial class CheckboxAndLabel : UserControl
     {
+        //Data Members
+        private String skillName;   //the text value for nameLbl
+        private String labelText;   //the text value for totalValueLbl
+        private int abilityMod;     //the ability modifer score to add the the roll of this skill, passed into from a CharSheet
+        private int profMod;        //the proficiency modifer to add to the roll of this skill if the check box is checked, passed in from char sheet
+        private bool boxChecked;    //tells if the check box is currently checked or not
 
-        private String skillName;
-        private String labelText;
-        private int abilityMod;
-        private int profMod;
-        private bool boxChecked;
+        //Constructors
+        public CheckboxAndLabel()
+        {
+            InitializeComponent();
+            boxChecked = false;
+            abilityMod = 0;
+            profMod = 0;
+        }
 
-      
+        //Class Methods
+        public void UpdateCheckBoxAndLabel(int updatedMod, int updatedProfMod)  //called from Char sheet, used to update ability mod and prof mod when new values are entered on char sheet
+        {
+            AbilityMod = updatedMod;
+            profMod = updatedProfMod;
+            LabelText = Convert.ToString(CalcTotal());
+        }
 
+        private int CalcTotal()     //called to figure out the total plus roll to add to this skill (if check box is checked add prof mod, otherwise only add abilityMod
+        {
+            int rValue = abilityMod;
+            if (boxChecked)
+            {
+                rValue += profMod;
+            }
+            return rValue;
+        }
+
+        //Event Methods
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                boxChecked = true;
+            }
+            else
+            {
+                boxChecked = false;
+            }
+            LabelText = Convert.ToString(CalcTotal());
+        }
+        private void nameLbl_Click(object sender, EventArgs e)
+        {
+            //$$add roll function call
+        }
+
+
+        //Member access methods
         public string LabelText
         {
             get
@@ -84,56 +136,6 @@ namespace sql_and_interactive_window
             {
                 nameLbl.Text = value;
             }
-        }
-
-     
-
-        public CheckboxAndLabel()
-        {
-            InitializeComponent();
-            boxChecked = false;
-            abilityMod = 0;
-            profMod = 0;
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked)
-            {
-                boxChecked = true;
-            }
-            else
-            {
-                boxChecked = false;
-            }
-            LabelText = Convert.ToString(CalcTotal());
-        }
-
-        private int CalcTotal()
-        {
-            int rValue = abilityMod;
-            if (boxChecked)
-            {
-                rValue += profMod;
-            }
-            return rValue;
-        }
-
-        public void UpdateCheckBoxAndLabel(int updatedMod, int updatedProfMod)
-        {
-            AbilityMod = updatedMod;
-            profMod = updatedProfMod;
-            LabelText = Convert.ToString(CalcTotal());
-        }
-
-        private void nameLbl_Click(object sender, EventArgs e)
-        {
-            //$$add roll function call
-        }
-
-        private void totalValueLbl_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

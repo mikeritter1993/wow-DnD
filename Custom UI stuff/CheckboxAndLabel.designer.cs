@@ -1,4 +1,4 @@
-﻿namespace sql_and_interactive_window
+﻿namespace DnD
 {
     partial class CheckboxAndLabel
     {
@@ -51,7 +51,6 @@
             this.totalValueLbl.Size = new System.Drawing.Size(13, 13);
             this.totalValueLbl.TabIndex = 1;
             this.totalValueLbl.Text = "0";
-            this.totalValueLbl.Click += new System.EventHandler(this.totalValueLbl_Click);
             // 
             // nameLbl
             // 

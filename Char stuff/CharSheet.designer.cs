@@ -1,4 +1,4 @@
-﻿namespace sql_and_interactive_window
+﻿namespace DnD
 {
     partial class CharSheet
     {
@@ -55,32 +55,32 @@
             this.groupAbilityScores = new System.Windows.Forms.Panel();
             this.groupSkills = new System.Windows.Forms.Panel();
             this.skillsLbl = new System.Windows.Forms.Label();
-            this.skillStealth = new sql_and_interactive_window.CheckboxAndLabel();
-            this.skillSurvival = new sql_and_interactive_window.CheckboxAndLabel();
-            this.skillSlightOfHand = new sql_and_interactive_window.CheckboxAndLabel();
-            this.skillAnimalHandling = new sql_and_interactive_window.CheckboxAndLabel();
-            this.skillReligion = new sql_and_interactive_window.CheckboxAndLabel();
-            this.skillPersuasion = new sql_and_interactive_window.CheckboxAndLabel();
-            this.skillPerformance = new sql_and_interactive_window.CheckboxAndLabel();
-            this.skillPerception = new sql_and_interactive_window.CheckboxAndLabel();
-            this.skillNature = new sql_and_interactive_window.CheckboxAndLabel();
-            this.skillMedicine = new sql_and_interactive_window.CheckboxAndLabel();
-            this.skillInvestigation = new sql_and_interactive_window.CheckboxAndLabel();
-            this.skillIntimidation = new sql_and_interactive_window.CheckboxAndLabel();
-            this.skillInsight = new sql_and_interactive_window.CheckboxAndLabel();
-            this.skillHistory = new sql_and_interactive_window.CheckboxAndLabel();
-            this.skillDeception = new sql_and_interactive_window.CheckboxAndLabel();
-            this.skillAthletics = new sql_and_interactive_window.CheckboxAndLabel();
-            this.skillArcana = new sql_and_interactive_window.CheckboxAndLabel();
-            this.skillAcrobatics = new sql_and_interactive_window.CheckboxAndLabel();
+            this.skillStealth = new DnD.CheckboxAndLabel();
+            this.skillSurvival = new DnD.CheckboxAndLabel();
+            this.skillSlightOfHand = new DnD.CheckboxAndLabel();
+            this.skillAnimalHandling = new DnD.CheckboxAndLabel();
+            this.skillReligion = new DnD.CheckboxAndLabel();
+            this.skillPersuasion = new DnD.CheckboxAndLabel();
+            this.skillPerformance = new DnD.CheckboxAndLabel();
+            this.skillPerception = new DnD.CheckboxAndLabel();
+            this.skillNature = new DnD.CheckboxAndLabel();
+            this.skillMedicine = new DnD.CheckboxAndLabel();
+            this.skillInvestigation = new DnD.CheckboxAndLabel();
+            this.skillIntimidation = new DnD.CheckboxAndLabel();
+            this.skillInsight = new DnD.CheckboxAndLabel();
+            this.skillHistory = new DnD.CheckboxAndLabel();
+            this.skillDeception = new DnD.CheckboxAndLabel();
+            this.skillAthletics = new DnD.CheckboxAndLabel();
+            this.skillArcana = new DnD.CheckboxAndLabel();
+            this.skillAcrobatics = new DnD.CheckboxAndLabel();
             this.savingThrowsPan = new System.Windows.Forms.Panel();
             this.savingThrowLbl = new System.Windows.Forms.Label();
-            this.savingThrowCharisma = new sql_and_interactive_window.CheckboxAndLabel();
-            this.savingThrowIntelligence = new sql_and_interactive_window.CheckboxAndLabel();
-            this.savingThrowSpirit = new sql_and_interactive_window.CheckboxAndLabel();
-            this.savingThrowStamina = new sql_and_interactive_window.CheckboxAndLabel();
-            this.savingThrowAgility = new sql_and_interactive_window.CheckboxAndLabel();
-            this.savingThrowStrength = new sql_and_interactive_window.CheckboxAndLabel();
+            this.savingThrowCharisma = new DnD.CheckboxAndLabel();
+            this.savingThrowIntelligence = new DnD.CheckboxAndLabel();
+            this.savingThrowSpirit = new DnD.CheckboxAndLabel();
+            this.savingThrowStamina = new DnD.CheckboxAndLabel();
+            this.savingThrowAgility = new DnD.CheckboxAndLabel();
+            this.savingThrowStrength = new DnD.CheckboxAndLabel();
             this.armorClassTxt = new System.Windows.Forms.TextBox();
             this.armorClass = new System.Windows.Forms.Label();
             this.armorClassPan = new System.Windows.Forms.Panel();
@@ -100,15 +100,15 @@
             this.TempHpLbl = new System.Windows.Forms.Label();
             this.tempHpTxt = new System.Windows.Forms.TextBox();
             this.defenseStatsPan = new System.Windows.Forms.Panel();
-            this.maxManaPan = new System.Windows.Forms.Panel();
-            this.maxManaLbl = new System.Windows.Forms.Label();
-            this.maxManaTxt = new System.Windows.Forms.TextBox();
-            this.currentManaPan = new System.Windows.Forms.Panel();
-            this.currentManaLbl = new System.Windows.Forms.Label();
-            this.currentManaTxt = new System.Windows.Forms.TextBox();
             this.tempManaPan = new System.Windows.Forms.Panel();
             this.tempManaLbl = new System.Windows.Forms.Label();
             this.tempManaTxt = new System.Windows.Forms.TextBox();
+            this.currentManaPan = new System.Windows.Forms.Panel();
+            this.currentManaLbl = new System.Windows.Forms.Label();
+            this.currentManaTxt = new System.Windows.Forms.TextBox();
+            this.maxManaPan = new System.Windows.Forms.Panel();
+            this.maxManaLbl = new System.Windows.Forms.Label();
+            this.maxManaTxt = new System.Windows.Forms.TextBox();
             this.intelligencePan.SuspendLayout();
             this.charismaPan.SuspendLayout();
             this.spiritPan.SuspendLayout();
@@ -125,9 +125,9 @@
             this.maxHpPan.SuspendLayout();
             this.tempHpPan.SuspendLayout();
             this.defenseStatsPan.SuspendLayout();
-            this.maxManaPan.SuspendLayout();
-            this.currentManaPan.SuspendLayout();
             this.tempManaPan.SuspendLayout();
+            this.currentManaPan.SuspendLayout();
+            this.maxManaPan.SuspendLayout();
             this.SuspendLayout();
             // 
             // intelligenceValue
@@ -470,7 +470,6 @@
             this.groupSkills.Name = "groupSkills";
             this.groupSkills.Size = new System.Drawing.Size(194, 466);
             this.groupSkills.TabIndex = 32;
-            this.groupSkills.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // skillsLbl
             // 
@@ -866,7 +865,6 @@
             this.speedLbl.Size = new System.Drawing.Size(38, 13);
             this.speedLbl.TabIndex = 41;
             this.speedLbl.Text = "Speed";
-            this.speedLbl.Click += new System.EventHandler(this.speedLbl_Click);
             // 
             // speedTxt
             // 
@@ -892,7 +890,6 @@
             this.currentHpLbl.Size = new System.Drawing.Size(58, 13);
             this.currentHpLbl.TabIndex = 41;
             this.currentHpLbl.Text = "Current Hp";
-            this.currentHpLbl.Click += new System.EventHandler(this.currentHpLbl_Click);
             // 
             // currentHpTxt
             // 
@@ -909,7 +906,6 @@
             this.maxHpPan.Name = "maxHpPan";
             this.maxHpPan.Size = new System.Drawing.Size(68, 53);
             this.maxHpPan.TabIndex = 46;
-            this.maxHpPan.Paint += new System.Windows.Forms.PaintEventHandler(this.maxHpPan_Paint);
             // 
             // maxHpLbl
             // 
@@ -944,7 +940,6 @@
             this.TempHpLbl.Size = new System.Drawing.Size(51, 13);
             this.TempHpLbl.TabIndex = 41;
             this.TempHpLbl.Text = "Temp Hp";
-            this.TempHpLbl.Click += new System.EventHandler(this.TempHpLbl_Click);
             // 
             // tempHpTxt
             // 
@@ -971,30 +966,30 @@
             this.defenseStatsPan.Size = new System.Drawing.Size(244, 259);
             this.defenseStatsPan.TabIndex = 48;
             // 
-            // maxManaPan
+            // tempManaPan
             // 
-            this.maxManaPan.Controls.Add(this.maxManaLbl);
-            this.maxManaPan.Controls.Add(this.maxManaTxt);
-            this.maxManaPan.Location = new System.Drawing.Point(167, 75);
-            this.maxManaPan.Name = "maxManaPan";
-            this.maxManaPan.Size = new System.Drawing.Size(73, 53);
-            this.maxManaPan.TabIndex = 49;
+            this.tempManaPan.Controls.Add(this.tempManaLbl);
+            this.tempManaPan.Controls.Add(this.tempManaTxt);
+            this.tempManaPan.Location = new System.Drawing.Point(167, 193);
+            this.tempManaPan.Name = "tempManaPan";
+            this.tempManaPan.Size = new System.Drawing.Size(73, 53);
+            this.tempManaPan.TabIndex = 49;
             // 
-            // maxManaLbl
+            // tempManaLbl
             // 
-            this.maxManaLbl.AutoSize = true;
-            this.maxManaLbl.Location = new System.Drawing.Point(9, 34);
-            this.maxManaLbl.Name = "maxManaLbl";
-            this.maxManaLbl.Size = new System.Drawing.Size(57, 13);
-            this.maxManaLbl.TabIndex = 41;
-            this.maxManaLbl.Text = "Max Mana";
+            this.tempManaLbl.AutoSize = true;
+            this.tempManaLbl.Location = new System.Drawing.Point(3, 34);
+            this.tempManaLbl.Name = "tempManaLbl";
+            this.tempManaLbl.Size = new System.Drawing.Size(64, 13);
+            this.tempManaLbl.TabIndex = 41;
+            this.tempManaLbl.Text = "Temp Mana";
             // 
-            // maxManaTxt
+            // tempManaTxt
             // 
-            this.maxManaTxt.Location = new System.Drawing.Point(12, 11);
-            this.maxManaTxt.Name = "maxManaTxt";
-            this.maxManaTxt.Size = new System.Drawing.Size(45, 20);
-            this.maxManaTxt.TabIndex = 40;
+            this.tempManaTxt.Location = new System.Drawing.Point(12, 11);
+            this.tempManaTxt.Name = "tempManaTxt";
+            this.tempManaTxt.Size = new System.Drawing.Size(45, 20);
+            this.tempManaTxt.TabIndex = 40;
             // 
             // currentManaPan
             // 
@@ -1021,30 +1016,30 @@
             this.currentManaTxt.Size = new System.Drawing.Size(45, 20);
             this.currentManaTxt.TabIndex = 40;
             // 
-            // tempManaPan
+            // maxManaPan
             // 
-            this.tempManaPan.Controls.Add(this.tempManaLbl);
-            this.tempManaPan.Controls.Add(this.tempManaTxt);
-            this.tempManaPan.Location = new System.Drawing.Point(167, 193);
-            this.tempManaPan.Name = "tempManaPan";
-            this.tempManaPan.Size = new System.Drawing.Size(73, 53);
-            this.tempManaPan.TabIndex = 49;
+            this.maxManaPan.Controls.Add(this.maxManaLbl);
+            this.maxManaPan.Controls.Add(this.maxManaTxt);
+            this.maxManaPan.Location = new System.Drawing.Point(167, 75);
+            this.maxManaPan.Name = "maxManaPan";
+            this.maxManaPan.Size = new System.Drawing.Size(73, 53);
+            this.maxManaPan.TabIndex = 49;
             // 
-            // tempManaLbl
+            // maxManaLbl
             // 
-            this.tempManaLbl.AutoSize = true;
-            this.tempManaLbl.Location = new System.Drawing.Point(3, 34);
-            this.tempManaLbl.Name = "tempManaLbl";
-            this.tempManaLbl.Size = new System.Drawing.Size(64, 13);
-            this.tempManaLbl.TabIndex = 41;
-            this.tempManaLbl.Text = "Temp Mana";
+            this.maxManaLbl.AutoSize = true;
+            this.maxManaLbl.Location = new System.Drawing.Point(9, 34);
+            this.maxManaLbl.Name = "maxManaLbl";
+            this.maxManaLbl.Size = new System.Drawing.Size(57, 13);
+            this.maxManaLbl.TabIndex = 41;
+            this.maxManaLbl.Text = "Max Mana";
             // 
-            // tempManaTxt
+            // maxManaTxt
             // 
-            this.tempManaTxt.Location = new System.Drawing.Point(12, 11);
-            this.tempManaTxt.Name = "tempManaTxt";
-            this.tempManaTxt.Size = new System.Drawing.Size(45, 20);
-            this.tempManaTxt.TabIndex = 40;
+            this.maxManaTxt.Location = new System.Drawing.Point(12, 11);
+            this.maxManaTxt.Name = "maxManaTxt";
+            this.maxManaTxt.Size = new System.Drawing.Size(45, 20);
+            this.maxManaTxt.TabIndex = 40;
             // 
             // CharSheet
             // 
@@ -1090,12 +1085,12 @@
             this.tempHpPan.ResumeLayout(false);
             this.tempHpPan.PerformLayout();
             this.defenseStatsPan.ResumeLayout(false);
-            this.maxManaPan.ResumeLayout(false);
-            this.maxManaPan.PerformLayout();
-            this.currentManaPan.ResumeLayout(false);
-            this.currentManaPan.PerformLayout();
             this.tempManaPan.ResumeLayout(false);
             this.tempManaPan.PerformLayout();
+            this.currentManaPan.ResumeLayout(false);
+            this.currentManaPan.PerformLayout();
+            this.maxManaPan.ResumeLayout(false);
+            this.maxManaPan.PerformLayout();
             this.ResumeLayout(false);
 
         }

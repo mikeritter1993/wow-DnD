@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*********************************************************************************************************************
+Class: CharSheet
+Description: The main page of the program, holds a players character stats and information, designed to make rolling and stat tracking easy for players
+Status: not complete
+TO DO: add death saving throw section, add roll function calls to EVERYTHING, prolly some other stuff cant think atm
+**********************************************************************************************************************/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +15,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace sql_and_interactive_window
+namespace DnD
 {
     public partial class CharSheet : Form
-    {
-        private int refValueAgilityMod;
+    {   
+        //data members
+        private int refValueAgilityMod;     //variables that hold the plus modifier of the corresponding ability score for reference
         private int refValueStaminaMod;
         private int refValueStrengthMod;
         private int refValueCharismaMod;
@@ -20,30 +28,68 @@ namespace sql_and_interactive_window
         private int refValueSpiritMod;
         private int refValueProfeciantMod;
 
+        //constructors
         public CharSheet()
         {
             InitializeComponent();
             refValueProfeciantMod = 1; //$$temp remove once profeciant value is setup
         }
 
-        private void MasterUpdate()
+        //class methods
+        private void MasterUpdate() //called on page load and anytime a change to the ability scores happens, used to update anything on the page that needs it
         {
             UpdateSkills();
             UpdateSavingThrows();
             initiativeTxt.Text = "+" + Convert.ToString(refValueAgilityMod);
         }
 
-        private int Roll(int lowBound, int highBound)
+        private int Roll(int lowBound, int highBound)   //randoms a number between lowBound (inclusive) and highBound (inclusive)
         {
             Random rand = new Random();
-            int rValue = rand.Next(lowBound, highBound + 1);
+            int rValue = rand.Next(lowBound, highBound + 1);    //+1 to make highbound inclusive
             return rValue;
         }
 
+        private void UpdateSkills()    //gets information into all skills that need it
+        {
+            skillAcrobatics.UpdateCheckBoxAndLabel(refValueAgilityMod, refValueProfeciantMod);
+            skillSlightOfHand.UpdateCheckBoxAndLabel(refValueAgilityMod, refValueProfeciantMod);
+            skillStealth.UpdateCheckBoxAndLabel(refValueAgilityMod, refValueProfeciantMod);
+
+            skillAnimalHandling.UpdateCheckBoxAndLabel(refValueSpiritMod, refValueProfeciantMod);
+            skillInsight.UpdateCheckBoxAndLabel(refValueSpiritMod, refValueProfeciantMod);
+            skillMedicine.UpdateCheckBoxAndLabel(refValueSpiritMod, refValueProfeciantMod);
+            skillPerception.UpdateCheckBoxAndLabel(refValueSpiritMod, refValueProfeciantMod);
+            skillSurvival.UpdateCheckBoxAndLabel(refValueSpiritMod, refValueProfeciantMod);
+
+            skillHistory.UpdateCheckBoxAndLabel(refValueIntelligenceMod, refValueProfeciantMod);
+            skillInvestigation.UpdateCheckBoxAndLabel(refValueIntelligenceMod, refValueProfeciantMod);
+            skillNature.UpdateCheckBoxAndLabel(refValueIntelligenceMod, refValueProfeciantMod);
+            skillReligion.UpdateCheckBoxAndLabel(refValueIntelligenceMod, refValueProfeciantMod);
+            skillArcana.UpdateCheckBoxAndLabel(refValueIntelligenceMod, refValueProfeciantMod);
+
+            skillAthletics.UpdateCheckBoxAndLabel(refValueStrengthMod, refValueProfeciantMod);
+
+            skillDeception.UpdateCheckBoxAndLabel(refValueCharismaMod, refValueProfeciantMod);
+            skillIntimidation.UpdateCheckBoxAndLabel(refValueCharismaMod, refValueProfeciantMod);
+            skillPerformance.UpdateCheckBoxAndLabel(refValueCharismaMod, refValueProfeciantMod);
+            skillPersuasion.UpdateCheckBoxAndLabel(refValueCharismaMod, refValueProfeciantMod);
+        }
+
+        private void UpdateSavingThrows()   //gets information into all savingThrows that need it
+        {
+            savingThrowAgility.UpdateCheckBoxAndLabel(refValueAgilityMod, refValueProfeciantMod);
+            savingThrowStrength.UpdateCheckBoxAndLabel(refValueStrengthMod, refValueProfeciantMod);
+            savingThrowSpirit.UpdateCheckBoxAndLabel(refValueSpiritMod, refValueProfeciantMod);
+            savingThrowIntelligence.UpdateCheckBoxAndLabel(refValueIntelligenceMod, refValueProfeciantMod);
+            savingThrowCharisma.UpdateCheckBoxAndLabel(refValueCharismaMod, refValueProfeciantMod);
+            savingThrowStamina.UpdateCheckBoxAndLabel(refValueStaminaMod, refValueProfeciantMod);
+        }
+
+        //event methods
         private void staminaLbl_Click(object sender, EventArgs e)
         {
-            int rolledValue = Roll(1, 20) + refValueStaminaMod;
-
+            //$$add roll function call
         }
 
         private void strengthLbl_Click(object sender, EventArgs e)
@@ -67,6 +113,10 @@ namespace sql_and_interactive_window
         }
 
         private void charismaLbl_Click(object sender, EventArgs e)
+        {
+            //$$add roll function call
+        }
+        private void initiativeLbl_Click(object sender, EventArgs e)
         {
             //$$add roll function call
         }
@@ -129,81 +179,6 @@ namespace sql_and_interactive_window
             refValueCharismaMod = ((mod / 2) - 5);
             charismaMod.Text = "+" + refValueCharismaMod;
             MasterUpdate();
-        }
-
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CharSheet_Load(object sender, EventArgs e)
-        {
-            MasterUpdate();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void UpdateSkills()
-        {
-            skillAcrobatics.UpdateCheckBoxAndLabel(refValueAgilityMod, refValueProfeciantMod);
-            skillSlightOfHand.UpdateCheckBoxAndLabel(refValueAgilityMod, refValueProfeciantMod);
-            skillStealth.UpdateCheckBoxAndLabel(refValueAgilityMod, refValueProfeciantMod);
-
-            skillAnimalHandling.UpdateCheckBoxAndLabel(refValueSpiritMod, refValueProfeciantMod);
-            skillInsight.UpdateCheckBoxAndLabel(refValueSpiritMod, refValueProfeciantMod);
-            skillMedicine.UpdateCheckBoxAndLabel(refValueSpiritMod, refValueProfeciantMod);
-            skillPerception.UpdateCheckBoxAndLabel(refValueSpiritMod, refValueProfeciantMod);
-            skillSurvival.UpdateCheckBoxAndLabel(refValueSpiritMod, refValueProfeciantMod);
-
-            skillHistory.UpdateCheckBoxAndLabel(refValueIntelligenceMod, refValueProfeciantMod);
-            skillInvestigation.UpdateCheckBoxAndLabel(refValueIntelligenceMod, refValueProfeciantMod);
-            skillNature.UpdateCheckBoxAndLabel(refValueIntelligenceMod, refValueProfeciantMod);
-            skillReligion.UpdateCheckBoxAndLabel(refValueIntelligenceMod, refValueProfeciantMod);
-            skillArcana.UpdateCheckBoxAndLabel(refValueIntelligenceMod, refValueProfeciantMod);
-
-            skillAthletics.UpdateCheckBoxAndLabel(refValueStrengthMod, refValueProfeciantMod);
-
-            skillDeception.UpdateCheckBoxAndLabel(refValueCharismaMod, refValueProfeciantMod);
-            skillIntimidation.UpdateCheckBoxAndLabel(refValueCharismaMod, refValueProfeciantMod);
-            skillPerformance.UpdateCheckBoxAndLabel(refValueCharismaMod, refValueProfeciantMod);
-            skillPersuasion.UpdateCheckBoxAndLabel(refValueCharismaMod, refValueProfeciantMod);
-        }
-
-        private void UpdateSavingThrows()
-        {
-            savingThrowAgility.UpdateCheckBoxAndLabel(refValueAgilityMod, refValueProfeciantMod);
-            savingThrowStrength.UpdateCheckBoxAndLabel(refValueStrengthMod, refValueProfeciantMod);
-            savingThrowSpirit.UpdateCheckBoxAndLabel(refValueSpiritMod, refValueProfeciantMod);
-            savingThrowIntelligence.UpdateCheckBoxAndLabel(refValueIntelligenceMod, refValueProfeciantMod);
-            savingThrowCharisma.UpdateCheckBoxAndLabel(refValueCharismaMod, refValueProfeciantMod);
-            savingThrowStamina.UpdateCheckBoxAndLabel(refValueStaminaMod, refValueProfeciantMod);
-        }
-        private void speedLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void currentHpLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TempHpLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void initiativeLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void maxHpPan_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

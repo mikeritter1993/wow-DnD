@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*******************************************************************************************************
+Class: SqlHelper
+Description: designed to make doing sql commands easier for us, minaly used for making new accoutns and loging into the server for users at the moment
+Status: complete maybe?
+TO DO: wrote it a long time ago need to make sure this is what we want.
+*******************************************************************************************************/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +13,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace sql_and_interactive_window
+namespace DnD
 {
     class SqlHelper
     {

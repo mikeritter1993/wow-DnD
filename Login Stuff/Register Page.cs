@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*******************************************************************************************************
+Class: RegisterPage (will fix name later)
+Description: gets a email, password and user name to make a users login information, checks info against existing users for obvs reasons.
+Status: complete maybe?
+TO DO: wrote it a long time ago need to make sure this is what we want.
+*******************************************************************************************************/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,7 +16,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace sql_and_interactive_window
+namespace DnD
 {
     public partial class Register_Page : Form
     {

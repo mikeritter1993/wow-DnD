@@ -1,4 +1,10 @@
-﻿using System;
+﻿/******************************************************************************************************
+Class: LoginPage
+Description: takes input of a username or email and a password, checks if input givin has a existing account with the server and logs them in if they do
+Status: complete maybe?
+TO DO: wrote it a long time ago need to make sure this is what we want.
+*******************************************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace sql_and_interactive_window
+namespace DnD
 {
     public partial class LoginPage : Form
     {
