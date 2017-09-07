@@ -48,7 +48,6 @@
             this.ipAddressTxt.Name = "ipAddressTxt";
             this.ipAddressTxt.Size = new System.Drawing.Size(124, 20);
             this.ipAddressTxt.TabIndex = 1;
-            this.ipAddressTxt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // connectBtn
             // 
@@ -58,6 +57,7 @@
             this.connectBtn.TabIndex = 2;
             this.connectBtn.Text = "Connect";
             this.connectBtn.UseVisualStyleBackColor = true;
+            this.connectBtn.Click += new System.EventHandler(this.connectBtn_Click);
             // 
             // JoinGame
             // 

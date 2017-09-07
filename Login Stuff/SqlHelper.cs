@@ -2,7 +2,7 @@
 Class: SqlHelper
 Description: designed to make doing sql commands easier for us, minaly used for making new accoutns and loging into the server for users at the moment
 Status: complete maybe?
-TO DO: wrote it a long time ago need to make sure this is what we want.
+TO DO: variable functionality.
 *******************************************************************************************************/
 
 using System;
@@ -22,7 +22,8 @@ namespace DnD
 
         public SqlHelper()
         {
-            connection = "Data Source=MIKE-PC;Initial Catalog=Testing;Integrated Security=True";
+            connection = "Data Source=MIKE-PC;Initial Catalog=LoginData;User ID=sa;Password=asdf1234";
+            //connection = "Data Source=MIKE-PC;Initial Catalog=Testing;Integrated Security=True";
         }
 
         public SqlHelper(String command)
@@ -30,7 +31,7 @@ namespace DnD
             this.command = command;
         }
 
-        public bool InsertData()
+        public bool ExecuteNonQuery()
         {
             try
             {
@@ -55,7 +56,7 @@ namespace DnD
             }
             
         }
-        public DataTable ExecuteCommand()
+        public DataTable ExecuteQuery()
         {
             DataTable data;
             try
@@ -67,15 +68,10 @@ namespace DnD
                     {
                         query.CommandText = command;
                         SqlDataReader reader = query.ExecuteReader();
-                        if (reader.HasRows)
-                        {
-                            data = new DataTable();
-                            data.Load(reader);
-                        }
-                        else
-                        {
-                            data = null;
-                        }
+                     
+                        data = new DataTable();
+                        data.Load(reader);
+                     
 
                         reader.Close();
                         con.Close();

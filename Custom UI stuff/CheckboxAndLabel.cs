@@ -1,9 +1,7 @@
 ﻿/*******************************************************************************************************************************
 Class: CheckboxAndLabel
 Description: Custom UserControl for windows forms porjects, uses the pre exsisting windows form tools "check box" and 2 "Labels"
-             main functionality if check box is checked add profMod to label 1.
-Status: not complete
-TO DO: add roll function call to nameLbl clicking
+             main functionality if check box is checked add profMod to label 1
 *******************************************************************************************************************************/
 using System;
 using System.Collections.Generic;
@@ -22,9 +20,10 @@ namespace DnD
         //Data Members
         private String skillName;   //the text value for nameLbl
         private String labelText;   //the text value for totalValueLbl
-        private int abilityMod;     //the ability modifer score to add the the roll of this skill, passed into from a CharSheet
+        private int abilityMod;     //the ability modifer score to add the roll of this skill, passed into from a CharSheet
         private int profMod;        //the proficiency modifer to add to the roll of this skill if the check box is checked, passed in from char sheet
         private bool boxChecked;    //tells if the check box is currently checked or not
+        private CharSheet parentRef;//reference value of the Parent form that this control belongs to, used to call bubble up handler function in char sheet.
 
         //Constructors
         public CheckboxAndLabel()
@@ -68,7 +67,7 @@ namespace DnD
         }
         private void nameLbl_Click(object sender, EventArgs e)
         {
-            //$$add roll function call
+            ParentRef.CheckboxAndLabelHandeler(this, e);
         }
 
 
@@ -122,6 +121,7 @@ namespace DnD
             set
             {
                 boxChecked = value;
+                checkBox1.Checked = value;
             }
         }
 
@@ -135,6 +135,19 @@ namespace DnD
             set
             {
                 nameLbl.Text = value;
+            }
+        }
+
+        public CharSheet ParentRef
+        {
+            get
+            {
+                return parentRef;
+            }
+
+            set
+            {
+                parentRef = value;
             }
         }
     }

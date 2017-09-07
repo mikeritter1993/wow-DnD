@@ -17,21 +17,34 @@ namespace DnD
         /// The main entry point for the application.
         /// </summary>
 
+        private static Player user;
 
-        static public DataRow loggedInUser;  //Columns = UserName, Email, Password. All the users data
+        public static Player User
+        {
+            get
+            {
+                return user;
+            }
+
+            set
+            {
+                user = value;
+            }
+        }
 
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new MainMenu());
+            Application.Run(new MainMenu());
 
-           // if (loggedInUser != null)
-           // {
-                Application.Run(new CharSheet());
-            //}
-            
+            if (user != null)
+            {
+                Application.Run(new JoinOrHost());
+            }
+
+            Environment.Exit(0);
         }
     }
 }

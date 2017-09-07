@@ -40,6 +40,7 @@
             this.joinGameBtn.TabIndex = 1;
             this.joinGameBtn.Text = "Join Game";
             this.joinGameBtn.UseVisualStyleBackColor = true;
+            this.joinGameBtn.Click += new System.EventHandler(this.joinGameBtn_Click);
             // 
             // hostGameBtn
             // 
@@ -49,6 +50,7 @@
             this.hostGameBtn.TabIndex = 2;
             this.hostGameBtn.Text = "Host Game";
             this.hostGameBtn.UseVisualStyleBackColor = true;
+            this.hostGameBtn.Click += new System.EventHandler(this.hostGameBtn_Click);
             // 
             // JoinOrHost
             // 

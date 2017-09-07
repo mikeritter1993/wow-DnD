@@ -55,32 +55,8 @@
             this.groupAbilityScores = new System.Windows.Forms.Panel();
             this.groupSkills = new System.Windows.Forms.Panel();
             this.skillsLbl = new System.Windows.Forms.Label();
-            this.skillStealth = new DnD.CheckboxAndLabel();
-            this.skillSurvival = new DnD.CheckboxAndLabel();
-            this.skillSlightOfHand = new DnD.CheckboxAndLabel();
-            this.skillAnimalHandling = new DnD.CheckboxAndLabel();
-            this.skillReligion = new DnD.CheckboxAndLabel();
-            this.skillPersuasion = new DnD.CheckboxAndLabel();
-            this.skillPerformance = new DnD.CheckboxAndLabel();
-            this.skillPerception = new DnD.CheckboxAndLabel();
-            this.skillNature = new DnD.CheckboxAndLabel();
-            this.skillMedicine = new DnD.CheckboxAndLabel();
-            this.skillInvestigation = new DnD.CheckboxAndLabel();
-            this.skillIntimidation = new DnD.CheckboxAndLabel();
-            this.skillInsight = new DnD.CheckboxAndLabel();
-            this.skillHistory = new DnD.CheckboxAndLabel();
-            this.skillDeception = new DnD.CheckboxAndLabel();
-            this.skillAthletics = new DnD.CheckboxAndLabel();
-            this.skillArcana = new DnD.CheckboxAndLabel();
-            this.skillAcrobatics = new DnD.CheckboxAndLabel();
             this.savingThrowsPan = new System.Windows.Forms.Panel();
             this.savingThrowLbl = new System.Windows.Forms.Label();
-            this.savingThrowCharisma = new DnD.CheckboxAndLabel();
-            this.savingThrowIntelligence = new DnD.CheckboxAndLabel();
-            this.savingThrowSpirit = new DnD.CheckboxAndLabel();
-            this.savingThrowStamina = new DnD.CheckboxAndLabel();
-            this.savingThrowAgility = new DnD.CheckboxAndLabel();
-            this.savingThrowStrength = new DnD.CheckboxAndLabel();
             this.armorClassTxt = new System.Windows.Forms.TextBox();
             this.armorClass = new System.Windows.Forms.Label();
             this.armorClassPan = new System.Windows.Forms.Panel();
@@ -109,6 +85,38 @@
             this.maxManaPan = new System.Windows.Forms.Panel();
             this.maxManaLbl = new System.Windows.Forms.Label();
             this.maxManaTxt = new System.Windows.Forms.TextBox();
+            this.chatLogTxt = new System.Windows.Forms.RichTextBox();
+            this.messageBoxTxt = new System.Windows.Forms.TextBox();
+            this.messageBoxSendBtn = new System.Windows.Forms.Button();
+            this.charListCoBox = new System.Windows.Forms.ComboBox();
+            this.selectedCharLbl = new System.Windows.Forms.Label();
+            this.editCharacterBtn = new System.Windows.Forms.Button();
+            this.newCharacterBtn = new System.Windows.Forms.Button();
+            this.deleteCharBtn = new System.Windows.Forms.Button();
+            this.savingThrowCharisma = new DnD.CheckboxAndLabel();
+            this.savingThrowIntelligence = new DnD.CheckboxAndLabel();
+            this.savingThrowSpirit = new DnD.CheckboxAndLabel();
+            this.savingThrowStamina = new DnD.CheckboxAndLabel();
+            this.savingThrowAgility = new DnD.CheckboxAndLabel();
+            this.savingThrowStrength = new DnD.CheckboxAndLabel();
+            this.skillStealth = new DnD.CheckboxAndLabel();
+            this.skillSurvival = new DnD.CheckboxAndLabel();
+            this.skillSlightOfHand = new DnD.CheckboxAndLabel();
+            this.skillAnimalHandling = new DnD.CheckboxAndLabel();
+            this.skillReligion = new DnD.CheckboxAndLabel();
+            this.skillPersuasion = new DnD.CheckboxAndLabel();
+            this.skillPerformance = new DnD.CheckboxAndLabel();
+            this.skillPerception = new DnD.CheckboxAndLabel();
+            this.skillNature = new DnD.CheckboxAndLabel();
+            this.skillMedicine = new DnD.CheckboxAndLabel();
+            this.skillInvestigation = new DnD.CheckboxAndLabel();
+            this.skillIntimidation = new DnD.CheckboxAndLabel();
+            this.skillInsight = new DnD.CheckboxAndLabel();
+            this.skillHistory = new DnD.CheckboxAndLabel();
+            this.skillDeception = new DnD.CheckboxAndLabel();
+            this.skillAthletics = new DnD.CheckboxAndLabel();
+            this.skillArcana = new DnD.CheckboxAndLabel();
+            this.skillAcrobatics = new DnD.CheckboxAndLabel();
             this.intelligencePan.SuspendLayout();
             this.charismaPan.SuspendLayout();
             this.spiritPan.SuspendLayout();
@@ -439,7 +447,7 @@
             this.groupAbilityScores.Controls.Add(this.staminaPan);
             this.groupAbilityScores.Controls.Add(this.spiritPan);
             this.groupAbilityScores.Controls.Add(this.agilityPan);
-            this.groupAbilityScores.Location = new System.Drawing.Point(68, 12);
+            this.groupAbilityScores.Location = new System.Drawing.Point(12, 45);
             this.groupAbilityScores.Name = "groupAbilityScores";
             this.groupAbilityScores.Size = new System.Drawing.Size(632, 100);
             this.groupAbilityScores.TabIndex = 13;
@@ -466,7 +474,7 @@
             this.groupSkills.Controls.Add(this.skillAthletics);
             this.groupSkills.Controls.Add(this.skillArcana);
             this.groupSkills.Controls.Add(this.skillAcrobatics);
-            this.groupSkills.Location = new System.Drawing.Point(67, 118);
+            this.groupSkills.Location = new System.Drawing.Point(11, 151);
             this.groupSkills.Name = "groupSkills";
             this.groupSkills.Size = new System.Drawing.Size(194, 466);
             this.groupSkills.TabIndex = 32;
@@ -481,222 +489,6 @@
             this.skillsLbl.TabIndex = 40;
             this.skillsLbl.Text = "Skills";
             // 
-            // skillStealth
-            // 
-            this.skillStealth.AbilityMod = 0;
-            this.skillStealth.BoxChecked = false;
-            this.skillStealth.LabelText = "0";
-            this.skillStealth.Location = new System.Drawing.Point(15, 402);
-            this.skillStealth.Name = "skillStealth";
-            this.skillStealth.ProfMod = 0;
-            this.skillStealth.Size = new System.Drawing.Size(118, 19);
-            this.skillStealth.SkillName = "Stealth (Agi)";
-            this.skillStealth.TabIndex = 30;
-            // 
-            // skillSurvival
-            // 
-            this.skillSurvival.AbilityMod = 0;
-            this.skillSurvival.BoxChecked = false;
-            this.skillSurvival.LabelText = "0";
-            this.skillSurvival.Location = new System.Drawing.Point(15, 423);
-            this.skillSurvival.Name = "skillSurvival";
-            this.skillSurvival.ProfMod = 0;
-            this.skillSurvival.Size = new System.Drawing.Size(130, 19);
-            this.skillSurvival.SkillName = "Survival (Spirit)";
-            this.skillSurvival.TabIndex = 31;
-            // 
-            // skillSlightOfHand
-            // 
-            this.skillSlightOfHand.AbilityMod = 0;
-            this.skillSlightOfHand.BoxChecked = false;
-            this.skillSlightOfHand.LabelText = "0";
-            this.skillSlightOfHand.Location = new System.Drawing.Point(15, 377);
-            this.skillSlightOfHand.Name = "skillSlightOfHand";
-            this.skillSlightOfHand.ProfMod = 0;
-            this.skillSlightOfHand.Size = new System.Drawing.Size(148, 19);
-            this.skillSlightOfHand.SkillName = "Slight of Hand (Agi)";
-            this.skillSlightOfHand.TabIndex = 29;
-            // 
-            // skillAnimalHandling
-            // 
-            this.skillAnimalHandling.AbilityMod = 0;
-            this.skillAnimalHandling.BoxChecked = false;
-            this.skillAnimalHandling.LabelText = "0";
-            this.skillAnimalHandling.Location = new System.Drawing.Point(15, 27);
-            this.skillAnimalHandling.Name = "skillAnimalHandling";
-            this.skillAnimalHandling.ProfMod = 0;
-            this.skillAnimalHandling.Size = new System.Drawing.Size(162, 19);
-            this.skillAnimalHandling.SkillName = "Animal Handling (Spirit)";
-            this.skillAnimalHandling.TabIndex = 15;
-            // 
-            // skillReligion
-            // 
-            this.skillReligion.AbilityMod = 0;
-            this.skillReligion.BoxChecked = false;
-            this.skillReligion.LabelText = "0";
-            this.skillReligion.Location = new System.Drawing.Point(15, 352);
-            this.skillReligion.Name = "skillReligion";
-            this.skillReligion.ProfMod = 0;
-            this.skillReligion.Size = new System.Drawing.Size(118, 19);
-            this.skillReligion.SkillName = "Religion (Int)";
-            this.skillReligion.TabIndex = 28;
-            // 
-            // skillPersuasion
-            // 
-            this.skillPersuasion.AbilityMod = 0;
-            this.skillPersuasion.BoxChecked = false;
-            this.skillPersuasion.LabelText = "0";
-            this.skillPersuasion.Location = new System.Drawing.Point(15, 327);
-            this.skillPersuasion.Name = "skillPersuasion";
-            this.skillPersuasion.ProfMod = 0;
-            this.skillPersuasion.Size = new System.Drawing.Size(136, 19);
-            this.skillPersuasion.SkillName = "Persuasion (Cha)";
-            this.skillPersuasion.TabIndex = 27;
-            // 
-            // skillPerformance
-            // 
-            this.skillPerformance.AbilityMod = 0;
-            this.skillPerformance.BoxChecked = false;
-            this.skillPerformance.LabelText = "0";
-            this.skillPerformance.Location = new System.Drawing.Point(15, 302);
-            this.skillPerformance.Name = "skillPerformance";
-            this.skillPerformance.ProfMod = 0;
-            this.skillPerformance.Size = new System.Drawing.Size(148, 19);
-            this.skillPerformance.SkillName = "Performance (Cha)";
-            this.skillPerformance.TabIndex = 26;
-            // 
-            // skillPerception
-            // 
-            this.skillPerception.AbilityMod = 0;
-            this.skillPerception.BoxChecked = false;
-            this.skillPerception.LabelText = "0";
-            this.skillPerception.Location = new System.Drawing.Point(15, 277);
-            this.skillPerception.Name = "skillPerception";
-            this.skillPerception.ProfMod = 0;
-            this.skillPerception.Size = new System.Drawing.Size(136, 19);
-            this.skillPerception.SkillName = "Perception (Spirit)";
-            this.skillPerception.TabIndex = 25;
-            // 
-            // skillNature
-            // 
-            this.skillNature.AbilityMod = 0;
-            this.skillNature.BoxChecked = false;
-            this.skillNature.LabelText = "0";
-            this.skillNature.Location = new System.Drawing.Point(15, 252);
-            this.skillNature.Name = "skillNature";
-            this.skillNature.ProfMod = 0;
-            this.skillNature.Size = new System.Drawing.Size(106, 19);
-            this.skillNature.SkillName = "Nature (Int)";
-            this.skillNature.TabIndex = 24;
-            // 
-            // skillMedicine
-            // 
-            this.skillMedicine.AbilityMod = 0;
-            this.skillMedicine.BoxChecked = false;
-            this.skillMedicine.LabelText = "0";
-            this.skillMedicine.Location = new System.Drawing.Point(15, 227);
-            this.skillMedicine.Name = "skillMedicine";
-            this.skillMedicine.ProfMod = 0;
-            this.skillMedicine.Size = new System.Drawing.Size(130, 19);
-            this.skillMedicine.SkillName = "Medicine (Spirit)";
-            this.skillMedicine.TabIndex = 23;
-            // 
-            // skillInvestigation
-            // 
-            this.skillInvestigation.AbilityMod = 0;
-            this.skillInvestigation.BoxChecked = false;
-            this.skillInvestigation.LabelText = "0";
-            this.skillInvestigation.Location = new System.Drawing.Point(15, 202);
-            this.skillInvestigation.Name = "skillInvestigation";
-            this.skillInvestigation.ProfMod = 0;
-            this.skillInvestigation.Size = new System.Drawing.Size(136, 19);
-            this.skillInvestigation.SkillName = "Investigation (Int)";
-            this.skillInvestigation.TabIndex = 22;
-            // 
-            // skillIntimidation
-            // 
-            this.skillIntimidation.AbilityMod = 0;
-            this.skillIntimidation.BoxChecked = false;
-            this.skillIntimidation.LabelText = "0";
-            this.skillIntimidation.Location = new System.Drawing.Point(15, 177);
-            this.skillIntimidation.Name = "skillIntimidation";
-            this.skillIntimidation.ProfMod = 0;
-            this.skillIntimidation.Size = new System.Drawing.Size(136, 19);
-            this.skillIntimidation.SkillName = "Intimidation (Cha)";
-            this.skillIntimidation.TabIndex = 21;
-            // 
-            // skillInsight
-            // 
-            this.skillInsight.AbilityMod = 0;
-            this.skillInsight.BoxChecked = false;
-            this.skillInsight.LabelText = "0";
-            this.skillInsight.Location = new System.Drawing.Point(15, 152);
-            this.skillInsight.Name = "skillInsight";
-            this.skillInsight.ProfMod = 0;
-            this.skillInsight.Size = new System.Drawing.Size(122, 19);
-            this.skillInsight.SkillName = "Insight (Spirit)";
-            this.skillInsight.TabIndex = 20;
-            // 
-            // skillHistory
-            // 
-            this.skillHistory.AbilityMod = 0;
-            this.skillHistory.BoxChecked = false;
-            this.skillHistory.LabelText = "0";
-            this.skillHistory.Location = new System.Drawing.Point(15, 127);
-            this.skillHistory.Name = "skillHistory";
-            this.skillHistory.ProfMod = 0;
-            this.skillHistory.Size = new System.Drawing.Size(106, 19);
-            this.skillHistory.SkillName = "History (Int)";
-            this.skillHistory.TabIndex = 19;
-            // 
-            // skillDeception
-            // 
-            this.skillDeception.AbilityMod = 0;
-            this.skillDeception.BoxChecked = false;
-            this.skillDeception.LabelText = "0";
-            this.skillDeception.Location = new System.Drawing.Point(15, 102);
-            this.skillDeception.Name = "skillDeception";
-            this.skillDeception.ProfMod = 0;
-            this.skillDeception.Size = new System.Drawing.Size(130, 19);
-            this.skillDeception.SkillName = "Deception (Cha)";
-            this.skillDeception.TabIndex = 18;
-            // 
-            // skillAthletics
-            // 
-            this.skillAthletics.AbilityMod = 0;
-            this.skillAthletics.BoxChecked = false;
-            this.skillAthletics.LabelText = "0";
-            this.skillAthletics.Location = new System.Drawing.Point(15, 77);
-            this.skillAthletics.Name = "skillAthletics";
-            this.skillAthletics.ProfMod = 0;
-            this.skillAthletics.Size = new System.Drawing.Size(122, 19);
-            this.skillAthletics.SkillName = "Athletics (Str)";
-            this.skillAthletics.TabIndex = 17;
-            // 
-            // skillArcana
-            // 
-            this.skillArcana.AbilityMod = 0;
-            this.skillArcana.BoxChecked = false;
-            this.skillArcana.LabelText = "0";
-            this.skillArcana.Location = new System.Drawing.Point(15, 52);
-            this.skillArcana.Name = "skillArcana";
-            this.skillArcana.ProfMod = 0;
-            this.skillArcana.Size = new System.Drawing.Size(106, 19);
-            this.skillArcana.SkillName = "Arcana (Int)";
-            this.skillArcana.TabIndex = 16;
-            // 
-            // skillAcrobatics
-            // 
-            this.skillAcrobatics.AbilityMod = 0;
-            this.skillAcrobatics.BoxChecked = false;
-            this.skillAcrobatics.LabelText = "0";
-            this.skillAcrobatics.Location = new System.Drawing.Point(15, 2);
-            this.skillAcrobatics.Name = "skillAcrobatics";
-            this.skillAcrobatics.ProfMod = 0;
-            this.skillAcrobatics.Size = new System.Drawing.Size(130, 19);
-            this.skillAcrobatics.SkillName = "Acrobatics (Agi)";
-            this.skillAcrobatics.TabIndex = 14;
-            // 
             // savingThrowsPan
             // 
             this.savingThrowsPan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -707,7 +499,7 @@
             this.savingThrowsPan.Controls.Add(this.savingThrowStamina);
             this.savingThrowsPan.Controls.Add(this.savingThrowAgility);
             this.savingThrowsPan.Controls.Add(this.savingThrowStrength);
-            this.savingThrowsPan.Location = new System.Drawing.Point(267, 118);
+            this.savingThrowsPan.Location = new System.Drawing.Point(211, 151);
             this.savingThrowsPan.Name = "savingThrowsPan";
             this.savingThrowsPan.Size = new System.Drawing.Size(126, 180);
             this.savingThrowsPan.TabIndex = 39;
@@ -721,78 +513,6 @@
             this.savingThrowLbl.Size = new System.Drawing.Size(91, 13);
             this.savingThrowLbl.TabIndex = 40;
             this.savingThrowLbl.Text = "Saving Throws";
-            // 
-            // savingThrowCharisma
-            // 
-            this.savingThrowCharisma.AbilityMod = 0;
-            this.savingThrowCharisma.BoxChecked = false;
-            this.savingThrowCharisma.LabelText = "0";
-            this.savingThrowCharisma.Location = new System.Drawing.Point(8, 130);
-            this.savingThrowCharisma.Name = "savingThrowCharisma";
-            this.savingThrowCharisma.ProfMod = 0;
-            this.savingThrowCharisma.Size = new System.Drawing.Size(93, 19);
-            this.savingThrowCharisma.SkillName = "Charisma";
-            this.savingThrowCharisma.TabIndex = 38;
-            // 
-            // savingThrowIntelligence
-            // 
-            this.savingThrowIntelligence.AbilityMod = 0;
-            this.savingThrowIntelligence.BoxChecked = false;
-            this.savingThrowIntelligence.LabelText = "0";
-            this.savingThrowIntelligence.Location = new System.Drawing.Point(8, 80);
-            this.savingThrowIntelligence.Name = "savingThrowIntelligence";
-            this.savingThrowIntelligence.ProfMod = 0;
-            this.savingThrowIntelligence.Size = new System.Drawing.Size(112, 19);
-            this.savingThrowIntelligence.SkillName = "Intelligence";
-            this.savingThrowIntelligence.TabIndex = 36;
-            // 
-            // savingThrowSpirit
-            // 
-            this.savingThrowSpirit.AbilityMod = 0;
-            this.savingThrowSpirit.BoxChecked = false;
-            this.savingThrowSpirit.LabelText = "0";
-            this.savingThrowSpirit.Location = new System.Drawing.Point(8, 105);
-            this.savingThrowSpirit.Name = "savingThrowSpirit";
-            this.savingThrowSpirit.ProfMod = 0;
-            this.savingThrowSpirit.Size = new System.Drawing.Size(76, 19);
-            this.savingThrowSpirit.SkillName = "Spirit";
-            this.savingThrowSpirit.TabIndex = 37;
-            // 
-            // savingThrowStamina
-            // 
-            this.savingThrowStamina.AbilityMod = 0;
-            this.savingThrowStamina.BoxChecked = false;
-            this.savingThrowStamina.LabelText = "0";
-            this.savingThrowStamina.Location = new System.Drawing.Point(8, 55);
-            this.savingThrowStamina.Name = "savingThrowStamina";
-            this.savingThrowStamina.ProfMod = 0;
-            this.savingThrowStamina.Size = new System.Drawing.Size(93, 19);
-            this.savingThrowStamina.SkillName = "Stamina";
-            this.savingThrowStamina.TabIndex = 35;
-            // 
-            // savingThrowAgility
-            // 
-            this.savingThrowAgility.AbilityMod = 0;
-            this.savingThrowAgility.BoxChecked = false;
-            this.savingThrowAgility.LabelText = "0";
-            this.savingThrowAgility.Location = new System.Drawing.Point(8, 30);
-            this.savingThrowAgility.Name = "savingThrowAgility";
-            this.savingThrowAgility.ProfMod = 0;
-            this.savingThrowAgility.Size = new System.Drawing.Size(93, 19);
-            this.savingThrowAgility.SkillName = "Agility";
-            this.savingThrowAgility.TabIndex = 34;
-            // 
-            // savingThrowStrength
-            // 
-            this.savingThrowStrength.AbilityMod = 0;
-            this.savingThrowStrength.BoxChecked = false;
-            this.savingThrowStrength.LabelText = "0";
-            this.savingThrowStrength.Location = new System.Drawing.Point(8, 5);
-            this.savingThrowStrength.Name = "savingThrowStrength";
-            this.savingThrowStrength.ProfMod = 0;
-            this.savingThrowStrength.Size = new System.Drawing.Size(93, 19);
-            this.savingThrowStrength.SkillName = "Strength";
-            this.savingThrowStrength.TabIndex = 33;
             // 
             // armorClassTxt
             // 
@@ -961,7 +681,7 @@
             this.defenseStatsPan.Controls.Add(this.maxHpPan);
             this.defenseStatsPan.Controls.Add(this.initiativePan);
             this.defenseStatsPan.Controls.Add(this.armorClassPan);
-            this.defenseStatsPan.Location = new System.Drawing.Point(399, 118);
+            this.defenseStatsPan.Location = new System.Drawing.Point(343, 151);
             this.defenseStatsPan.Name = "defenseStatsPan";
             this.defenseStatsPan.Size = new System.Drawing.Size(244, 259);
             this.defenseStatsPan.TabIndex = 48;
@@ -1041,12 +761,411 @@
             this.maxManaTxt.Size = new System.Drawing.Size(45, 20);
             this.maxManaTxt.TabIndex = 40;
             // 
+            // chatLogTxt
+            // 
+            this.chatLogTxt.Location = new System.Drawing.Point(719, 12);
+            this.chatLogTxt.Name = "chatLogTxt";
+            this.chatLogTxt.ReadOnly = true;
+            this.chatLogTxt.Size = new System.Drawing.Size(339, 572);
+            this.chatLogTxt.TabIndex = 49;
+            this.chatLogTxt.Text = "";
+            this.chatLogTxt.TextChanged += new System.EventHandler(this.chatLogTxt_TextChanged);
+            // 
+            // messageBoxTxt
+            // 
+            this.messageBoxTxt.Location = new System.Drawing.Point(719, 590);
+            this.messageBoxTxt.Name = "messageBoxTxt";
+            this.messageBoxTxt.Size = new System.Drawing.Size(288, 20);
+            this.messageBoxTxt.TabIndex = 51;
+            // 
+            // messageBoxSendBtn
+            // 
+            this.messageBoxSendBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.messageBoxSendBtn.Location = new System.Drawing.Point(1013, 588);
+            this.messageBoxSendBtn.Name = "messageBoxSendBtn";
+            this.messageBoxSendBtn.Size = new System.Drawing.Size(55, 23);
+            this.messageBoxSendBtn.TabIndex = 52;
+            this.messageBoxSendBtn.Text = "Send";
+            this.messageBoxSendBtn.UseVisualStyleBackColor = true;
+            this.messageBoxSendBtn.Click += new System.EventHandler(this.messageBoxSendBtn_Click);
+            // 
+            // charListCoBox
+            // 
+            this.charListCoBox.FormattingEnabled = true;
+            this.charListCoBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.charListCoBox.Location = new System.Drawing.Point(134, 12);
+            this.charListCoBox.Name = "charListCoBox";
+            this.charListCoBox.Size = new System.Drawing.Size(121, 21);
+            this.charListCoBox.TabIndex = 53;
+            this.charListCoBox.DropDown += new System.EventHandler(this.charListBox_DropDown);
+            this.charListCoBox.SelectedIndexChanged += new System.EventHandler(this.charListCoBox_SelectedIndexChanged);
+            // 
+            // selectedCharLbl
+            // 
+            this.selectedCharLbl.AutoSize = true;
+            this.selectedCharLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectedCharLbl.Location = new System.Drawing.Point(12, 15);
+            this.selectedCharLbl.Name = "selectedCharLbl";
+            this.selectedCharLbl.Size = new System.Drawing.Size(116, 13);
+            this.selectedCharLbl.TabIndex = 54;
+            this.selectedCharLbl.Text = "Selected Character";
+            // 
+            // editCharacterBtn
+            // 
+            this.editCharacterBtn.Location = new System.Drawing.Point(279, 12);
+            this.editCharacterBtn.Name = "editCharacterBtn";
+            this.editCharacterBtn.Size = new System.Drawing.Size(105, 23);
+            this.editCharacterBtn.TabIndex = 55;
+            this.editCharacterBtn.Text = "Edit Char Name";
+            this.editCharacterBtn.UseVisualStyleBackColor = true;
+            this.editCharacterBtn.Click += new System.EventHandler(this.editCharacterBtn_Click);
+            // 
+            // newCharacterBtn
+            // 
+            this.newCharacterBtn.Location = new System.Drawing.Point(403, 12);
+            this.newCharacterBtn.Name = "newCharacterBtn";
+            this.newCharacterBtn.Size = new System.Drawing.Size(106, 23);
+            this.newCharacterBtn.TabIndex = 56;
+            this.newCharacterBtn.Text = "New Character";
+            this.newCharacterBtn.UseVisualStyleBackColor = true;
+            this.newCharacterBtn.Click += new System.EventHandler(this.newCharacterBtn_Click);
+            // 
+            // deleteCharBtn
+            // 
+            this.deleteCharBtn.Location = new System.Drawing.Point(526, 12);
+            this.deleteCharBtn.Name = "deleteCharBtn";
+            this.deleteCharBtn.Size = new System.Drawing.Size(106, 23);
+            this.deleteCharBtn.TabIndex = 57;
+            this.deleteCharBtn.Text = "Delete Character";
+            this.deleteCharBtn.UseVisualStyleBackColor = true;
+            this.deleteCharBtn.Click += new System.EventHandler(this.deleteCharBtn_Click);
+            // 
+            // savingThrowCharisma
+            // 
+            this.savingThrowCharisma.AbilityMod = 0;
+            this.savingThrowCharisma.BoxChecked = false;
+            this.savingThrowCharisma.LabelText = "0";
+            this.savingThrowCharisma.Location = new System.Drawing.Point(8, 130);
+            this.savingThrowCharisma.Name = "savingThrowCharisma";
+            this.savingThrowCharisma.ParentRef = null;
+            this.savingThrowCharisma.ProfMod = 0;
+            this.savingThrowCharisma.Size = new System.Drawing.Size(93, 19);
+            this.savingThrowCharisma.SkillName = "Charisma";
+            this.savingThrowCharisma.TabIndex = 38;
+            // 
+            // savingThrowIntelligence
+            // 
+            this.savingThrowIntelligence.AbilityMod = 0;
+            this.savingThrowIntelligence.BoxChecked = false;
+            this.savingThrowIntelligence.LabelText = "0";
+            this.savingThrowIntelligence.Location = new System.Drawing.Point(8, 80);
+            this.savingThrowIntelligence.Name = "savingThrowIntelligence";
+            this.savingThrowIntelligence.ParentRef = null;
+            this.savingThrowIntelligence.ProfMod = 0;
+            this.savingThrowIntelligence.Size = new System.Drawing.Size(112, 19);
+            this.savingThrowIntelligence.SkillName = "Intelligence";
+            this.savingThrowIntelligence.TabIndex = 36;
+            // 
+            // savingThrowSpirit
+            // 
+            this.savingThrowSpirit.AbilityMod = 0;
+            this.savingThrowSpirit.BoxChecked = false;
+            this.savingThrowSpirit.LabelText = "0";
+            this.savingThrowSpirit.Location = new System.Drawing.Point(8, 105);
+            this.savingThrowSpirit.Name = "savingThrowSpirit";
+            this.savingThrowSpirit.ParentRef = null;
+            this.savingThrowSpirit.ProfMod = 0;
+            this.savingThrowSpirit.Size = new System.Drawing.Size(76, 19);
+            this.savingThrowSpirit.SkillName = "Spirit";
+            this.savingThrowSpirit.TabIndex = 37;
+            // 
+            // savingThrowStamina
+            // 
+            this.savingThrowStamina.AbilityMod = 0;
+            this.savingThrowStamina.BoxChecked = false;
+            this.savingThrowStamina.LabelText = "0";
+            this.savingThrowStamina.Location = new System.Drawing.Point(8, 55);
+            this.savingThrowStamina.Name = "savingThrowStamina";
+            this.savingThrowStamina.ParentRef = null;
+            this.savingThrowStamina.ProfMod = 0;
+            this.savingThrowStamina.Size = new System.Drawing.Size(93, 19);
+            this.savingThrowStamina.SkillName = "Stamina";
+            this.savingThrowStamina.TabIndex = 35;
+            // 
+            // savingThrowAgility
+            // 
+            this.savingThrowAgility.AbilityMod = 0;
+            this.savingThrowAgility.BoxChecked = false;
+            this.savingThrowAgility.LabelText = "0";
+            this.savingThrowAgility.Location = new System.Drawing.Point(8, 30);
+            this.savingThrowAgility.Name = "savingThrowAgility";
+            this.savingThrowAgility.ParentRef = null;
+            this.savingThrowAgility.ProfMod = 0;
+            this.savingThrowAgility.Size = new System.Drawing.Size(93, 19);
+            this.savingThrowAgility.SkillName = "Agility";
+            this.savingThrowAgility.TabIndex = 34;
+            // 
+            // savingThrowStrength
+            // 
+            this.savingThrowStrength.AbilityMod = 0;
+            this.savingThrowStrength.BoxChecked = false;
+            this.savingThrowStrength.LabelText = "0";
+            this.savingThrowStrength.Location = new System.Drawing.Point(8, 5);
+            this.savingThrowStrength.Name = "savingThrowStrength";
+            this.savingThrowStrength.ParentRef = null;
+            this.savingThrowStrength.ProfMod = 0;
+            this.savingThrowStrength.Size = new System.Drawing.Size(93, 19);
+            this.savingThrowStrength.SkillName = "Strength";
+            this.savingThrowStrength.TabIndex = 33;
+            // 
+            // skillStealth
+            // 
+            this.skillStealth.AbilityMod = 0;
+            this.skillStealth.BoxChecked = false;
+            this.skillStealth.LabelText = "0";
+            this.skillStealth.Location = new System.Drawing.Point(15, 402);
+            this.skillStealth.Name = "skillStealth";
+            this.skillStealth.ParentRef = null;
+            this.skillStealth.ProfMod = 0;
+            this.skillStealth.Size = new System.Drawing.Size(118, 19);
+            this.skillStealth.SkillName = "Stealth (Agi)";
+            this.skillStealth.TabIndex = 30;
+            // 
+            // skillSurvival
+            // 
+            this.skillSurvival.AbilityMod = 0;
+            this.skillSurvival.BoxChecked = false;
+            this.skillSurvival.LabelText = "0";
+            this.skillSurvival.Location = new System.Drawing.Point(15, 423);
+            this.skillSurvival.Name = "skillSurvival";
+            this.skillSurvival.ParentRef = null;
+            this.skillSurvival.ProfMod = 0;
+            this.skillSurvival.Size = new System.Drawing.Size(130, 19);
+            this.skillSurvival.SkillName = "Survival (Spirit)";
+            this.skillSurvival.TabIndex = 31;
+            // 
+            // skillSlightOfHand
+            // 
+            this.skillSlightOfHand.AbilityMod = 0;
+            this.skillSlightOfHand.BoxChecked = false;
+            this.skillSlightOfHand.LabelText = "0";
+            this.skillSlightOfHand.Location = new System.Drawing.Point(15, 377);
+            this.skillSlightOfHand.Name = "skillSlightOfHand";
+            this.skillSlightOfHand.ParentRef = null;
+            this.skillSlightOfHand.ProfMod = 0;
+            this.skillSlightOfHand.Size = new System.Drawing.Size(148, 19);
+            this.skillSlightOfHand.SkillName = "Slight of Hand (Agi)";
+            this.skillSlightOfHand.TabIndex = 29;
+            // 
+            // skillAnimalHandling
+            // 
+            this.skillAnimalHandling.AbilityMod = 0;
+            this.skillAnimalHandling.BoxChecked = false;
+            this.skillAnimalHandling.LabelText = "0";
+            this.skillAnimalHandling.Location = new System.Drawing.Point(15, 27);
+            this.skillAnimalHandling.Name = "skillAnimalHandling";
+            this.skillAnimalHandling.ParentRef = null;
+            this.skillAnimalHandling.ProfMod = 0;
+            this.skillAnimalHandling.Size = new System.Drawing.Size(162, 19);
+            this.skillAnimalHandling.SkillName = "Animal Handling (Spirit)";
+            this.skillAnimalHandling.TabIndex = 15;
+            // 
+            // skillReligion
+            // 
+            this.skillReligion.AbilityMod = 0;
+            this.skillReligion.BoxChecked = false;
+            this.skillReligion.LabelText = "0";
+            this.skillReligion.Location = new System.Drawing.Point(15, 352);
+            this.skillReligion.Name = "skillReligion";
+            this.skillReligion.ParentRef = null;
+            this.skillReligion.ProfMod = 0;
+            this.skillReligion.Size = new System.Drawing.Size(118, 19);
+            this.skillReligion.SkillName = "Religion (Int)";
+            this.skillReligion.TabIndex = 28;
+            // 
+            // skillPersuasion
+            // 
+            this.skillPersuasion.AbilityMod = 0;
+            this.skillPersuasion.BoxChecked = false;
+            this.skillPersuasion.LabelText = "0";
+            this.skillPersuasion.Location = new System.Drawing.Point(15, 327);
+            this.skillPersuasion.Name = "skillPersuasion";
+            this.skillPersuasion.ParentRef = null;
+            this.skillPersuasion.ProfMod = 0;
+            this.skillPersuasion.Size = new System.Drawing.Size(136, 19);
+            this.skillPersuasion.SkillName = "Persuasion (Cha)";
+            this.skillPersuasion.TabIndex = 27;
+            // 
+            // skillPerformance
+            // 
+            this.skillPerformance.AbilityMod = 0;
+            this.skillPerformance.BoxChecked = false;
+            this.skillPerformance.LabelText = "0";
+            this.skillPerformance.Location = new System.Drawing.Point(15, 302);
+            this.skillPerformance.Name = "skillPerformance";
+            this.skillPerformance.ParentRef = null;
+            this.skillPerformance.ProfMod = 0;
+            this.skillPerformance.Size = new System.Drawing.Size(148, 19);
+            this.skillPerformance.SkillName = "Performance (Cha)";
+            this.skillPerformance.TabIndex = 26;
+            // 
+            // skillPerception
+            // 
+            this.skillPerception.AbilityMod = 0;
+            this.skillPerception.BoxChecked = false;
+            this.skillPerception.LabelText = "0";
+            this.skillPerception.Location = new System.Drawing.Point(15, 277);
+            this.skillPerception.Name = "skillPerception";
+            this.skillPerception.ParentRef = null;
+            this.skillPerception.ProfMod = 0;
+            this.skillPerception.Size = new System.Drawing.Size(136, 19);
+            this.skillPerception.SkillName = "Perception (Spirit)";
+            this.skillPerception.TabIndex = 25;
+            // 
+            // skillNature
+            // 
+            this.skillNature.AbilityMod = 0;
+            this.skillNature.BoxChecked = false;
+            this.skillNature.LabelText = "0";
+            this.skillNature.Location = new System.Drawing.Point(15, 252);
+            this.skillNature.Name = "skillNature";
+            this.skillNature.ParentRef = null;
+            this.skillNature.ProfMod = 0;
+            this.skillNature.Size = new System.Drawing.Size(106, 19);
+            this.skillNature.SkillName = "Nature (Int)";
+            this.skillNature.TabIndex = 24;
+            // 
+            // skillMedicine
+            // 
+            this.skillMedicine.AbilityMod = 0;
+            this.skillMedicine.BoxChecked = false;
+            this.skillMedicine.LabelText = "0";
+            this.skillMedicine.Location = new System.Drawing.Point(15, 227);
+            this.skillMedicine.Name = "skillMedicine";
+            this.skillMedicine.ParentRef = null;
+            this.skillMedicine.ProfMod = 0;
+            this.skillMedicine.Size = new System.Drawing.Size(130, 19);
+            this.skillMedicine.SkillName = "Medicine (Spirit)";
+            this.skillMedicine.TabIndex = 23;
+            // 
+            // skillInvestigation
+            // 
+            this.skillInvestigation.AbilityMod = 0;
+            this.skillInvestigation.BoxChecked = false;
+            this.skillInvestigation.LabelText = "0";
+            this.skillInvestigation.Location = new System.Drawing.Point(15, 202);
+            this.skillInvestigation.Name = "skillInvestigation";
+            this.skillInvestigation.ParentRef = null;
+            this.skillInvestigation.ProfMod = 0;
+            this.skillInvestigation.Size = new System.Drawing.Size(136, 19);
+            this.skillInvestigation.SkillName = "Investigation (Int)";
+            this.skillInvestigation.TabIndex = 22;
+            // 
+            // skillIntimidation
+            // 
+            this.skillIntimidation.AbilityMod = 0;
+            this.skillIntimidation.BoxChecked = false;
+            this.skillIntimidation.LabelText = "0";
+            this.skillIntimidation.Location = new System.Drawing.Point(15, 177);
+            this.skillIntimidation.Name = "skillIntimidation";
+            this.skillIntimidation.ParentRef = null;
+            this.skillIntimidation.ProfMod = 0;
+            this.skillIntimidation.Size = new System.Drawing.Size(136, 19);
+            this.skillIntimidation.SkillName = "Intimidation (Cha)";
+            this.skillIntimidation.TabIndex = 21;
+            // 
+            // skillInsight
+            // 
+            this.skillInsight.AbilityMod = 0;
+            this.skillInsight.BoxChecked = false;
+            this.skillInsight.LabelText = "0";
+            this.skillInsight.Location = new System.Drawing.Point(15, 152);
+            this.skillInsight.Name = "skillInsight";
+            this.skillInsight.ParentRef = null;
+            this.skillInsight.ProfMod = 0;
+            this.skillInsight.Size = new System.Drawing.Size(122, 19);
+            this.skillInsight.SkillName = "Insight (Spirit)";
+            this.skillInsight.TabIndex = 20;
+            // 
+            // skillHistory
+            // 
+            this.skillHistory.AbilityMod = 0;
+            this.skillHistory.BoxChecked = false;
+            this.skillHistory.LabelText = "0";
+            this.skillHistory.Location = new System.Drawing.Point(15, 127);
+            this.skillHistory.Name = "skillHistory";
+            this.skillHistory.ParentRef = null;
+            this.skillHistory.ProfMod = 0;
+            this.skillHistory.Size = new System.Drawing.Size(106, 19);
+            this.skillHistory.SkillName = "History (Int)";
+            this.skillHistory.TabIndex = 19;
+            // 
+            // skillDeception
+            // 
+            this.skillDeception.AbilityMod = 0;
+            this.skillDeception.BoxChecked = false;
+            this.skillDeception.LabelText = "0";
+            this.skillDeception.Location = new System.Drawing.Point(15, 102);
+            this.skillDeception.Name = "skillDeception";
+            this.skillDeception.ParentRef = null;
+            this.skillDeception.ProfMod = 0;
+            this.skillDeception.Size = new System.Drawing.Size(130, 19);
+            this.skillDeception.SkillName = "Deception (Cha)";
+            this.skillDeception.TabIndex = 18;
+            // 
+            // skillAthletics
+            // 
+            this.skillAthletics.AbilityMod = 0;
+            this.skillAthletics.BoxChecked = false;
+            this.skillAthletics.LabelText = "0";
+            this.skillAthletics.Location = new System.Drawing.Point(15, 77);
+            this.skillAthletics.Name = "skillAthletics";
+            this.skillAthletics.ParentRef = null;
+            this.skillAthletics.ProfMod = 0;
+            this.skillAthletics.Size = new System.Drawing.Size(122, 19);
+            this.skillAthletics.SkillName = "Athletics (Str)";
+            this.skillAthletics.TabIndex = 17;
+            // 
+            // skillArcana
+            // 
+            this.skillArcana.AbilityMod = 0;
+            this.skillArcana.BoxChecked = false;
+            this.skillArcana.LabelText = "0";
+            this.skillArcana.Location = new System.Drawing.Point(15, 52);
+            this.skillArcana.Name = "skillArcana";
+            this.skillArcana.ParentRef = null;
+            this.skillArcana.ProfMod = 0;
+            this.skillArcana.Size = new System.Drawing.Size(106, 19);
+            this.skillArcana.SkillName = "Arcana (Int)";
+            this.skillArcana.TabIndex = 16;
+            // 
+            // skillAcrobatics
+            // 
+            this.skillAcrobatics.AbilityMod = 0;
+            this.skillAcrobatics.BoxChecked = false;
+            this.skillAcrobatics.LabelText = "0";
+            this.skillAcrobatics.Location = new System.Drawing.Point(15, 2);
+            this.skillAcrobatics.Name = "skillAcrobatics";
+            this.skillAcrobatics.ParentRef = null;
+            this.skillAcrobatics.ProfMod = 0;
+            this.skillAcrobatics.Size = new System.Drawing.Size(130, 19);
+            this.skillAcrobatics.SkillName = "Acrobatics (Agi)";
+            this.skillAcrobatics.TabIndex = 14;
+            // 
             // CharSheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(776, 631);
+            this.ClientSize = new System.Drawing.Size(1137, 631);
+            this.Controls.Add(this.deleteCharBtn);
+            this.Controls.Add(this.newCharacterBtn);
+            this.Controls.Add(this.editCharacterBtn);
+            this.Controls.Add(this.selectedCharLbl);
+            this.Controls.Add(this.charListCoBox);
+            this.Controls.Add(this.messageBoxSendBtn);
+            this.Controls.Add(this.messageBoxTxt);
+            this.Controls.Add(this.chatLogTxt);
             this.Controls.Add(this.defenseStatsPan);
             this.Controls.Add(this.savingThrowsPan);
             this.Controls.Add(this.groupSkills);
@@ -1054,6 +1173,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CharSheet";
             this.Text = "CharSheet";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CharSheet_FormClosing);
             this.Load += new System.EventHandler(this.CharSheet_Load);
             this.intelligencePan.ResumeLayout(false);
             this.intelligencePan.PerformLayout();
@@ -1092,6 +1212,7 @@
             this.maxManaPan.ResumeLayout(false);
             this.maxManaPan.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1177,5 +1298,13 @@
         private System.Windows.Forms.Panel tempManaPan;
         private System.Windows.Forms.Label tempManaLbl;
         private System.Windows.Forms.TextBox tempManaTxt;
+        private System.Windows.Forms.RichTextBox chatLogTxt;
+        private System.Windows.Forms.TextBox messageBoxTxt;
+        private System.Windows.Forms.Button messageBoxSendBtn;
+        private System.Windows.Forms.ComboBox charListCoBox;
+        private System.Windows.Forms.Label selectedCharLbl;
+        private System.Windows.Forms.Button editCharacterBtn;
+        private System.Windows.Forms.Button newCharacterBtn;
+        private System.Windows.Forms.Button deleteCharBtn;
     }
 }

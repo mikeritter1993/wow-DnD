@@ -27,6 +27,10 @@ namespace DnD
         {
             LoginPage childPage = new LoginPage();
             childPage.ShowDialog();
+            if (Program.User != null)
+            {
+                this.Close();
+            }
         }
 
         private void btnRegister_Click(object sender, EventArgs e)

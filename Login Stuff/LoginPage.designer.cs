@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblUserNameOrEmail = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lblUserNameOrEmail
+            // lblEmail
             // 
-            this.lblUserNameOrEmail.AutoSize = true;
-            this.lblUserNameOrEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserNameOrEmail.Location = new System.Drawing.Point(24, 24);
-            this.lblUserNameOrEmail.Name = "lblUserNameOrEmail";
-            this.lblUserNameOrEmail.Size = new System.Drawing.Size(114, 13);
-            this.lblUserNameOrEmail.TabIndex = 0;
-            this.lblUserNameOrEmail.Text = "UserName or Email";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(24, 24);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(69, 13);
+            this.lblEmail.TabIndex = 0;
+            this.lblEmail.Text = "User Name";
             // 
             // txtUserName
             // 
@@ -91,7 +91,7 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtUserName);
-            this.Controls.Add(this.lblUserNameOrEmail);
+            this.Controls.Add(this.lblEmail);
             this.Name = "LoginPage";
             this.Text = "Login Page";
             this.ResumeLayout(false);
@@ -101,7 +101,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblUserNameOrEmail;
+        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblPassword;

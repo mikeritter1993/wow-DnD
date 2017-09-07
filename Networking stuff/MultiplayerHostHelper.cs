@@ -3,6 +3,7 @@ Class: MultiplayerHostHelper
 Description: starts a server and handels connection of clients and communicating with them and each other
 Status: pretty much complete
 TO DO: add some try catches and some timeout debugging stuff, clients ending connection protection
+comments
 **********************************************************************/
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace DnD
         {
             numOfClients = 0;
             clientList = new List<TcpClient>();
-            host = new TcpListener (8888);
+            host = new TcpListener (7777);
         }
 
         private void ListenToClient(TcpClient client)   //listens to a client for messages to then be broadcast to all other clients, called on its own thread per client
@@ -46,8 +47,13 @@ namespace DnD
 
         }
         
-        //$$edit make another function to be called on its own thread and listen for connections, change this to call that function and set stuff up
         public void StartSever()    //start the server and start listening for connections 
+        {
+            Thread startServer = new Thread(ServerStartThreadCreation);
+            startServer.Start();
+        }
+
+        private void ServerStartThreadCreation()
         {
             TcpClient hold = null;
             host.Start();
@@ -55,7 +61,7 @@ namespace DnD
             while (true)
             {
                 if (host.Pending())
-                { 
+                {
                     hold = host.AcceptTcpClient();
                     clientList.Add(hold);
                     Thread startClient = new Thread(() => ListenToClient(hold));
@@ -69,8 +75,16 @@ namespace DnD
             byte[] clientMesgByte = System.Text.Encoding.ASCII.GetBytes(clientMessage);
             foreach (TcpClient item in clientList)
             {
-                NetworkStream stream = item.GetStream();
-                stream.Write(clientMesgByte, 0, clientMesgByte.Length);
+                if (item.Connected)
+                {
+                    NetworkStream stream = item.GetStream();
+                    stream.Write(clientMesgByte, 0, clientMesgByte.Length);
+                }
+                else
+                {
+                    clientList.Remove(item); //$$prolly want to call a function that handles removing people and broadcasting that they left
+                }
+                
             }
         }
 

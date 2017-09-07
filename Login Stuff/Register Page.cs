@@ -2,7 +2,7 @@
 Class: RegisterPage (will fix name later)
 Description: gets a email, password and user name to make a users login information, checks info against existing users for obvs reasons.
 Status: complete maybe?
-TO DO: wrote it a long time ago need to make sure this is what we want.
+TO DO: comments then done
 *******************************************************************************************************/
 
 using System;
@@ -23,6 +23,7 @@ namespace DnD
         public Register_Page()
         {
             InitializeComponent();
+            this.AcceptButton = btnRegister;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -34,15 +35,15 @@ namespace DnD
 
             SqlHelper sql = new SqlHelper();
             sql.Command = "SELECT * FROM [LoginData].[dbo].[LoginInfo] WHERE Email = \'" + email + "\';";
-            DataTable data = sql.ExecuteCommand();
-            if (data != null)
+            DataTable data = sql.ExecuteQuery();
+            if (data.Rows.Count > 0)
             {
                 MessageBox.Show("That email is already registered to another account. If you forgot your password click here.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 sql.Command = "INSERT INTO [LoginData].[dbo].[LoginInfo] (UserName,Email,Password) VALUES(\'" + userName + "\',\'" + email + "\',\'" + password + "\');";
-                if (!sql.InsertData())
+                if (!sql.ExecuteNonQuery())
                 {
                     //command had some error no rows were affected
                     //handle error
@@ -54,5 +55,7 @@ namespace DnD
                 }   
             } 
         }
+
+        
     }
 }
